@@ -7,7 +7,7 @@ const PORT = 3000;
 
 // Replace with your actual access token and verify token
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-const VERIFY_TOKEN = "abcdef";
+const VERIFY_TOKEN = "123456";
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
