@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // Replace with your actual access token and verify token
-const ACCESS_TOKEN = "EAAQFe3ZByGZCsBO8Su0pmMELwgRJDbMWn0qrtzlt1r8VQVtRejEU5zFgY92tSnIVlwiunAjSL9KeDg0ZA4hGZCPbzq322WAwhRunZCZCsxGLJGh0MHWEF1evi8DJMkEVDW9KelwmHkS9rJ2s7taJZAZB3TE9ZCcJP8ZCzanaZByQk4S508C5bpF54gxOdNkGoxJQP0Yg4HKBn8mLH6ySskiBLUAKNyZAA37F";
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const VERIFY_TOKEN = "abcdef";
 
 // Middleware to parse JSON
@@ -55,7 +55,7 @@ app.post("/webhook", async (req, res) => {
 
 // Function to Send Message
 async function sendMessage(to, message) {
-  const url = `https://graph.facebook.com/v17.0/1131927888337915/messages`; // Replace with your Phone Number ID
+  const url = `https://graph.facebook.com/v17.0/${process.env.PHONE_ID}/messages`; // Replace with your Phone Number ID
 
   const payload = {
     messaging_product: "whatsapp",
