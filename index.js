@@ -74,8 +74,7 @@ app.get("/webhook", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send(`<pre>Nothing to see here.
-Checkout README.md to start.</pre>`);
+  res.send(`<html><body><pre>Nothing to see here. Checkout README.md to start.</pre></body></html>`);
 });
 
 app.listen(PORT, () => {
